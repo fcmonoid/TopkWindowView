@@ -1,12 +1,12 @@
 # Top-k window view 
-code for esper's extension view with top-k concept
+Esper extension for top-k queries
 
 
-## dependencies
-* java
+## Dependencies
+* Java
 * Esper
 
-## get started
+## Get started
 ```
 Configuration config = new Configuration();
 EPServiceProvider epService = EPServiceProviderManager.getDefaultProvider(config);
@@ -14,12 +14,11 @@ epService.getEPAdministrator().getConfiguration().addPlugInView("custom", "topk"
 EPStatement stmt = epService.getEPAdministrator().createEPL(EPL Query);
 ```
 
-## abstract
-Top-k 질의 처리를 위한 오픈소스 복합 이벤트 처리 시스템의 확장
- 이벤트 스트림에 대한 Top-k 질의는 현재까지 유입된 이벤트 중 주어진 속성값이 큰 상위 k의 이벤트를 내어주는 것이다. 오픈소스 이벤트스트림 처리기인 Esper 엔진이 Top-k 질의를 효율적으로 지원할 수 있도록 Esper의 기존의 뷰를 확장 구현하였다. 결과적으로 기존의 Esper에서 제공되는 질의문만을 통해서  Top-k 질의를 처리하는것에 비해서 TopkWidnowview를 이용하는 것이 월등한 성능을 보이게 된다. . 또한 공개된 Esper의 소스 프로그램을 분석하고 의미적으로 적합한 방법을 탐구하여 Top-k 질의의 의미를 유지하는 확장 방법을 찾아 구현함으로써 직관적인 확장 방법을 사용했을 때 발생되는 문제를 제거하였다.
+## Overview
+A Top-k query on an event stream yields k events with largest values among the entire input events. This proposed code extends and integrate the open source event stream processing system Esper with a new querying facility so that its engine would process Top-k query efficiently. Finally, the proposed query shows enormous improvement in performance, compared to the combination of built-in query facilities provided by Esper. In addition, we analyze the source programs of Esper to find a proper way of Top-k query extension of Esper, otherwise, in a naive extension method, it could not support the correct meaning of Top-k queries as intended.
 
 ## Laboratory Site
-[PLAS LAB](http://plas.cnu.ac.kr/)
+[PLAS LAB](http://plas.cnu.ac.kr/, https://sites.google.com/cs-cnu.org/plas/)
 
 ## University Site
-[CNU](http://computer.cnu.ac.kr/)
+[CNU](http://computer.cnu.ac.kr/, http://computer.cnu.ac.kr/index.php?mid=int_greet_en, http://plus.cnu.ac.kr/html/en/, http://www.cnu.ac.kr)
